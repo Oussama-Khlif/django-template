@@ -1,0 +1,291 @@
+{% extends 'base.html' %}
+
+{% load static i18n %}
+
+{% block title %}{% trans "Home" %} - {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+
+{% include 'messenger_bubble.html' %}
+
+<style>
+    .feature-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+        margin: 0 auto;
+    }
+
+    .transform-on-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .transform-on-hover:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+    }
+
+    .testimonial-card {
+        border: none;
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,.075);
+        border-radius: 0.75rem;
+        transition: transform 0.2s ease;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .testimonial-card img {
+        border: 2px solid var(--bs-primary);
+        object-fit: cover;
+    }
+
+    .text-warning i {
+        color: #ffc107;
+    }
+
+    .pricing-card {
+        border: none;
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,.075);
+        border-radius: 0.75rem;
+        overflow: hidden;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .pricing-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 1rem 2rem rgba(0,0,0,.1)!important;
+    }
+
+    .pricing-card .card-header {
+        border-bottom: none;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .pricing-card .card-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+
+    .pricing-card ul li {
+        margin-bottom: 0.75rem;
+        font-size: 1.05rem;
+    }
+
+    .pricing-card .btn {
+        font-size: 1.1rem;
+        padding: 0.75rem 2rem;
+        border-radius: 0.5rem;
+    }
+
+    .pricing-card.border-primary {
+        border: 3px solid var(--bs-primary) !important;
+        box-shadow: 0 1rem 2rem rgba(0,0,0,.15)!important;
+    }
+    
+    .pricing-card.border-primary .card-header {
+        background-color: var(--bs-primary) !important;
+        color: white !important;
+    }
+
+</style>
+
+    <section class="bg-light py-5 text-center">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-10">
+                <h1 class="display-4 fw-bold mb-3">{% trans "Your Gateway to Enhanced Productivity" %}</h1>
+                <p class="lead mb-4">{% trans "Discover how our innovative solutions streamline your work, secure your data, and empower your growth." %}</p>
+                <div class="d-flex gap-3 justify-content-center">
+                    <a href="#features" class="btn btn-primary rounded-pill">{% trans "Explore Features" %}</a>
+                    <a href="" class="btn btn-outline-primary rounded-pill">{% trans "Get in Touch" %}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-5">
+        <h2 class="text-center mb-5 display-4 fw-bold">{% trans "Discover Our Powerful Features" %}</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-12 col-sm-4">
+                <div class="card h-100 border-0 shadow-lg transform-on-hover">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-4">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mb-3">{% trans "Blazing Fast Performance" %}</h3>
+                        <p class="text-muted mb-4">{% trans "Experience lightning-fast loading times and incredibly smooth operation for all your tasks." %}</p>
+                        <a href="#" class="btn btn-primary btn-lg rounded-pill px-4">{% trans "Learn More" %}</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-4">
+                <div class="card h-100 border-0 shadow-lg transform-on-hover">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-4">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mb-3">{% trans "Ironclad Security" %}</h3>
+                        <p class="text-muted mb-4">{% trans "Rest easy with enterprise-grade security measures dedicated to protecting all your valuable data." %}</p>
+                        <a href="#" class="btn btn-success btn-lg rounded-pill px-4">{% trans "Learn More" %}</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-4">
+                <div class="card h-100 border-0 shadow-lg transform-on-hover">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-4">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mb-3">{% trans "Fully Customizable" %}</h3>
+                        <p class="text-muted mb-4">{% trans "Effortlessly tailor the platform to precisely fit your unique workflows and specific organizational needs." %}</p>
+                        <a href="#" class="btn btn-info btn-lg rounded-pill px-4">{% trans "Learn More" %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-5">
+        <h2 class="text-center mb-5 display-4 fw-bold">{% trans "What Our Users Say" %}</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 testimonial-card p-3">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="{% static 'images/user1.jpg' %}" class="rounded-circle me-3" width="60" height="60" alt="{% trans 'Sarah Johnson' %}">
+                            <div>
+                                <h5 class="mb-0 fw-bold">{% trans "Sarah Johnson" %}</h5>
+                                <small class="text-muted">{% trans "Marketing Director" %}</small>
+                            </div>
+                        </div>
+                        <p class="card-text text-muted">"{% trans "This platform transformed our workflow. The intuitive interface and powerful features made a significant difference. Highly recommended!" %}"</p>
+                        <div class="text-warning mt-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 testimonial-card p-3">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="{% static 'images/user2.jpg' %}" class="rounded-circle me-3" width="60" height="60" alt="{% trans 'Michael Chen' %}">
+                            <div>
+                                <h5 class="mb-0 fw-bold">{% trans "Michael Chen" %}</h5>
+                                <small class="text-muted">{% trans "CTO" %}</small>
+                            </div>
+                        </div>
+                        <p class="card-text text-muted">"{% trans "As a CTO, security is paramount. The enterprise-grade security features of this platform give us absolute peace of mind for our sensitive data." %}"</p>
+                        <div class="text-warning mt-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 testimonial-card p-3">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="{% static 'images/user3.jpg' %}" class="rounded-circle me-3" width="60" height="60" alt="{% trans 'Emma Rodriguez' %}">
+                            <div>
+                                <h5 class="mb-0 fw-bold">{% trans "Emma Rodriguez" %}</h5>
+                                <small class="text-muted">{% trans "Small Business Owner" %}</small>
+                            </div>
+                        </div>
+                        <p class="card-text text-muted">"{% trans "This platform offers incredible value. It's both affordable and powerful – truly perfect for scaling my growing business without breaking the bank." %}"</p>
+                        <div class="text-warning mt-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 mb-5">
+        <h2 class="text-center mb-5 display-4 fw-bold">{% trans "Simple & Transparent Pricing" %}</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 pricing-card">
+                    <div class="card-header bg-light py-3">
+                        <h3 class="h5 text-center mb-0 fw-bold">{% trans "Basic" %}</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">$9.99<small class="text-muted fw-light">{% trans "/month" %}</small></h4>
+                        <ul class="list-unstyled mt-3 mb-4 text-muted">
+                            <li><i class="fas fa-check text-success me-2"></i>{% trans "10 users included" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{% trans "2 GB of storage" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{% trans "Email support" %}</li>
+                            <li><i class="fas fa-times text-danger me-2"></i><del>{% trans "Help center access" %}</del></li>
+                        </ul>
+                        <button type="button" class="btn btn-outline-primary w-100">{% trans "Get Started" %}</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 pricing-card border-primary">
+                    <div class="card-header py-3">
+                        <h3 class="h5 text-center mb-0 fw-bold">{% trans "Pro" %}</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">$19.99<small class="text-muted fw-light">{% trans "/month" %}</small></h4>
+                        <ul class="list-unstyled mt-3 mb-4 text-muted">
+                            <li><i class="fas fa-check text-success me-2"></i>{% trans "20 users included" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{% trans "10 GB of storage" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{% trans "Priority email support" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{% trans "Help center access" %}</li>
+                        </ul>
+                        <button type="button" class="btn btn-primary w-100">{% trans "Get Started" %}</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 pricing-card">
+                    <div class="card-header bg-light py-3">
+                        <h3 class="h5 text-center mb-0 fw-bold">{% trans "Enterprise" %}</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">$29.99<small class="text-muted fw-light">{% trans "/month" %}</small></h4>
+                        <ul class="list-unstyled mt-3 mb-4 text-muted">
+                            <li><i class="fas fa-check text-success me-2"></i>{% trans "Unlimited users" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{% trans "50 GB of storage" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{% trans "Phone & email support" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{% trans "Dedicated account manager" %}</li>
+                        </ul>
+                        <button type="button" class="btn btn-outline-primary w-100">{% trans "Contact Sales" %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-primary text-white text-center rounded-3">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-3">{% trans "Ready to Get Started?" %}</h2>
+            <p class="lead mb-4">{% trans "Join thousands of satisfied users and experience the difference our platform makes." %}</p>
+            <a href="{% url 'register' %}" class="btn btn-light btn-lg rounded-pill px-5">{% trans "Sign Up Today" %}</a>
+        </div>
+    </section>
+
+{% endblock content %}

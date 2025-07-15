@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "About Us" %} - {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+
+<section class="bg-light py-5 text-center">
+    <div>
+        <h1 class="display-4 fw-bold mb-3">{% trans "About Our Company" %}</h1>
+        <p class="lead text-muted">{% trans "Learn more about who we are, what drives us, and our commitment to excellence." %}</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div>
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="{% static 'images/about_us_story.jpg' %}" class="img-fluid rounded shadow-lg" alt="{% trans 'Our Story' %}">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="h3 fw-bold mb-4">{% trans "Our Journey So Far" %}</h2>
+                <p class="text-muted">{% trans "Founded in [Year of Founding], our company began with a simple yet powerful idea: [briefly state founding idea or problem solved]. From humble beginnings, we've grown into a dynamic team dedicated to [mention core activity/industry]." %}</p>
+                <p class="text-muted">{% trans "Over the years, we've celebrated many milestones, adapting to challenges and embracing innovation. Our passion for [your industry/field] has always been at the heart of everything we do, pushing us to constantly improve and deliver the best." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light py-5">
+    <div>
+        <div class="row text-center">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <h2 class="h3 fw-bold mb-3">{% trans "Our Mission" %}</h2>
+                <p class="lead text-muted">{% trans "To empower [your target audience] by providing [your product/service] that [key benefit]." %}</p>
+                <p class="text-muted">{% trans "We are committed to delivering exceptional quality, fostering strong relationships, and continuously innovating to meet the evolving needs of our clients." %}</p>
+            </div>
+            <div class="col-md-6">
+                <h2 class="h3 fw-bold mb-3">{% trans "Our Vision" %}</h2>
+                <p class="lead text-muted">{% trans "To be the leading [your industry] company, recognized for our [mention key differentiator] and positive impact on [area of impact]." %}</p>
+                <p class="text-muted">{% trans "We envision a future where our solutions contribute significantly to [positive outcome] and set new benchmarks for excellence in our field." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div>
+        <h2 class="h3 fw-bold text-center mb-5">{% trans "Our Core Values" %}</h2>
+        <div class="row g-4 text-center">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4">
+                    <div class="card-body">
+                        <i class="fas fa-handshake fa-3x text-primary mb-3"></i>
+                        <h4 class="h5 fw-bold">{% trans "Integrity" %}</h4>
+                        <p class="text-muted">{% trans "We operate with honesty, transparency, and strong moral principles in all our dealings." %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4">
+                    <div class="card-body">
+                        <i class="fas fa-lightbulb fa-3x text-success mb-3"></i>
+                        <h4 class="h5 fw-bold">{% trans "Innovation" %}</h4>
+                        <p class="text-muted">{% trans "We embrace creativity and continuously seek new and better ways to solve problems." %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4">
+                    <div class="card-body">
+                        <i class="fas fa-users fa-3x text-info mb-3"></i>
+                        <h4 class="h5 fw-bold">{% trans "Customer Focus" %}</h4>
+                        <p class="text-muted">{% trans "Our clients are at the heart of everything we do; their success is our priority." %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-primary text-white text-center">
+    <div>
+        <h2 class="display-5 fw-bold mb-3">{% trans "Ready to Work With Us?" %}</h2>
+        <p class="lead mb-4">{% trans "We're always excited to collaborate on new projects and build lasting partnerships." %}</p>
+        <a href="" class="btn btn-light btn-lg rounded-pill px-5">{% trans "Get in Touch" %}</a>
+    </div>
+</section>
+
+{% endblock content %}

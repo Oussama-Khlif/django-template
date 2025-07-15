@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Page</title>
+    <style>
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(220, 220, 220, 0.9); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+        }
+
+        #loading-overlay.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .discord-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(0, 0, 0, 0.2); 
+            border-top: 4px solid #555555; 
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); 
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            position: absolute;
+            top: 60%;
+            color: #333333; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(100, 100, 100, 0.6); 
+            border-radius: 50%;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            top: 30%;
+            left: 80%;
+            animation-delay: 0.5s;
+        }
+
+        .particle:nth-child(3) {
+            top: 70%;
+            left: 20%;
+            animation-delay: 1s;
+        }
+
+        .particle:nth-child(4) {
+            top: 80%;
+            left: 90%;
+            animation-delay: 1.5s;
+        }
+
+        .particle:nth-child(5) {
+            top: 40%;
+            left: 70%;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(-20px) scale(1.2);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-overlay">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+
+        <div class="discord-spinner"></div>
+        <div class="loading-text">Loading...</div>
+    </div>
+
+    <script>
+
+        if (!sessionStorage.getItem('loadingShown')) {
+
+            sessionStorage.setItem('loadingShown', 'true');
+
+            const loadingOverlay = document.getElementById('loading-overlay');
+            const startTime = Date.now();
+            const minimumDisplayTime = 500; 
+
+            function hideLoading() {
+                const elapsedTime = Date.now() - startTime;
+                const remainingTime = Math.max(0, minimumDisplayTime - elapsedTime);
+
+                setTimeout(() => {
+                    loadingOverlay.classList.add('fade-out');
+                    setTimeout(() => {
+                        loadingOverlay.style.display = 'none';
+                    }, 800);
+                }, remainingTime);
+            }
+
+            if (document.readyState === 'complete') {
+                hideLoading();
+            } else {
+                window.addEventListener('load', hideLoading);
+
+                setTimeout(hideLoading, 10000); 
+            }
+        } else {
+
+            document.getElementById('loading-overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

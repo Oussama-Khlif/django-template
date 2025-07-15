@@ -1,0 +1,104 @@
+{% load static i18n %}
+
+<footer class="mt-4 pt-4">
+    <div class="container pt-0 pb-0">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 mb-4 text-center text-lg-start">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo mb-3">
+                <p class="text-muted">{% trans "We are a company committed to delivering high-quality services and innovative solutions. Our experienced team works hard to achieve excellent results and build lasting client relationships. We value excellence, reliability, and customer satisfaction. "%}</p>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4 text-center">
+                <h5 class="fw-semibold fs-5 mb-4">{% trans "Quick Links" %}</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <button type="button" class="btn btn-link p-0 text-decoration-none text-secondary d-inline-flex align-items-center" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">
+                            <i class="fas fa-shield-alt text-primary me-3"></i> {% trans "Privacy Policy" %}
+                        </button>
+                    </li>
+                    <li class="mb-3">
+                        <button type="button" class="btn btn-link p-0 text-decoration-none text-secondary d-inline-flex align-items-center" data-bs-toggle="modal" data-bs-target="#termsModal">
+                            <i class="fas fa-file-contract text-primary me-3"></i> {% trans "Terms of Use" %}
+                        </button>
+                    </li>
+                    <li class="mb-3 d-flex justify-content-center align-items-center">
+                        <i class="fas fa-map-marker-alt text-primary me-3"></i>
+                        <div class="text-secondary">
+                            {% trans "Route de Sousse-M'saken 4070" %}
+                        </div>
+                    </li>
+                    <li class="mb-3 d-flex justify-content-center align-items-center">
+                        <i class="fas fa-envelope text-primary me-3"></i>
+                        <div class="text-secondary">
+                            <a href="mailto:khlifoussama55@gmail.com" class="text-decoration-none text-secondary">khlifoussama55@gmail.com</a>
+                        </div>
+                    </li>
+                    <li class="mb-3 d-flex justify-content-center align-items-center">
+                        <i class="fas fa-phone text-primary me-3"></i>
+                        <div class="text-secondary">
+                            <a href="tel:+21693266252" class="text-decoration-none text-secondary">(+216) 93 266 252</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-12 mb-4 text-center">
+                <h5 class="fw-semibold fs-5 mb-4">{% trans "Location" %}</h5>
+                <div class="map-container" style="width: 100%; height: 200px; border-radius:5px;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3156.335979462551!2d10.592535!3d35.738257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQ0JzE3LjciTiAxMMKwMzUnMzMuMSJF!5e1!3m2!1sen!2sus!4v1632928976695!5m2!1sen!2sus&q=Chromarium+Cultural+Center"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-top pt-4 pb-3 text-center">
+            <p class="text-muted small mb-0">&copy; 2025 loremipsum. {% trans "All rights reserved." %}</p>
+        </div>
+    </div>
+</footer>
+
+<div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="privacyPolicyModalLabel">{% trans "Privacy Policy" %}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{% trans "Close" %}"></button>
+            </div>
+            <div class="modal-body">
+                <p>{% trans "Protecting your personal information is a priority. We are committed to respecting your privacy and ensuring the security of your data when you use our website or services." %}</p> 
+
+                <h6>{% trans "User Rights" %}</h6>
+                <p>{% trans "You have rights regarding your personal data, including the right to access, correct, and delete it. To exercise these rights or for any privacy questions, please contact us at the email provided in the contact section of the site." %}</p>
+
+                <h6>{% trans "Privacy Policy Changes" %}</h6>
+                <p>{% trans "This privacy policy may be updated at any time. Changes will be posted on this page with the corresponding update date." %}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% trans "Close" %}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="termsModalLabel">{% trans "Terms of Use" %}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{% trans "Close" %}"></button>
+            </div>
+            <div class="modal-body">
+                <p>{% trans "These terms of use govern your access and use of this site. By accessing this site, you agree to comply with these terms. If you do not agree, please do not use the site." %}</p>
+
+                <h6>{% trans "Intellectual Property" %}</h6>
+                <p>{% trans "The site's content, including texts, images, logos, and other elements, is protected by intellectual property laws. Any unauthorized reproduction, distribution, or use of this content is prohibited." %}</p>
+
+                <h6>{% trans "Changes to Terms of Use" %}</h6>
+                <p>{% trans "These terms may be changed at any time. Updates will be posted on this page and take effect immediately. It is recommended to regularly check this section to stay informed of any changes." %}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% trans "Close" %}</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "My Account" %} - {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card" style="margin-bottom:20px;">
+                <div class="card-body text-center">
+                    {% if user.profile_picture %}
+                        <img src="{{ user.profile_picture.url }}" alt="{% trans "Profile Picture" %}" class="rounded-circle img-fluid mb-3 mx-auto d-block" style="width: 150px; height: 150px; object-fit: cover;">
+                    {% else %}
+                        <img src="{% static 'images/user.png' %}" alt="{% trans "Profile Picture" %}" class="rounded-circle img-fluid mb-3 mx-auto d-block" style="width: 150px; height: 150px; object-fit: cover;">
+                    {% endif %}
+                    <h4>{{ user.first_name }} {{ user.last_name }}</h4>
+                    {% if user.first_name or user.last_name %}
+                        <p class="text-muted mb-1">({{ user.username }})</p>
+                    {% endif %}
+                    <p class="text-muted">
+                        {% if user.email %}
+                            {{ user.email }}
+                        {% else %}
+                            {% trans "No email available" %}
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            {% include 'message.html' %}
+            
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">{% trans "Edit Profile" %}</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="{{ profile_form.username.id_for_label }}" class="form-label">{% trans "Username" %}</label>
+                            {{ profile_form.username }}
+                            {% if profile_form.username.errors %}
+                                <div class="text-danger">{{ profile_form.username.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ profile_form.profile_picture.id_for_label }}" class="form-label">{% trans "Profile Picture" %}</label>
+                            {{ profile_form.profile_picture }}
+                            {% if profile_form.profile_picture.errors %}
+                                <div class="text-danger">{{ profile_form.profile_picture.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <button type="submit" name="update_profile" class="btn btn-primary">{% trans "Update Profile" %}</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">{% trans "Personal Information" %}</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="{{ personal_info_form.first_name.id_for_label }}" class="form-label">{% trans "First Name" %}</label>
+                            {{ personal_info_form.first_name }}
+                            {% if personal_info_form.first_name.errors %}
+                                <div class="text-danger">{{ personal_info_form.first_name.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ personal_info_form.last_name.id_for_label }}" class="form-label">{% trans "Last Name" %}</label>
+                            {{ personal_info_form.last_name }}
+                            {% if personal_info_form.last_name.errors %}
+                                <div class="text-danger">{{ personal_info_form.last_name.errors }}</div>
+                            {% endif %}
+                        </div>
+                    {% if user.has_usable_password %}
+                        <div class="mb-3">
+                            <label for="{{ personal_info_form.email.id_for_label }}" class="form-label">{% trans "Email" %}</label>
+                            {{ personal_info_form.email }}
+                            {% if personal_info_form.email.errors %}
+                                <div class="text-danger">{{ personal_info_form.email.errors }}</div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                        <button type="submit" name="update_personal_info" class="btn btn-success">{% trans "Update Information" %}</button>
+                    </form>
+                </div>
+            </div>
+
+    {% if user.has_usable_password %}
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">{% trans "Change Password" %}</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="{{ password_form.old_password.id_for_label }}" class="form-label">{% trans "Old Password" %}</label>
+                            <div class="input-group">
+                                <input type="password" name="old_password" class="form-control" id="{{ password_form.old_password.id_for_label }}" placeholder="{% trans "Enter your old password" %}">
+                                <button class="btn btn-outline-secondary" type="button" id="toggleOldPassword">
+                                    <i class="fas fa-eye" id="oldPasswordEyeIcon"></i>
+                                </button>
+                            </div>
+                            {% if password_form.old_password.errors %}
+                                <div class="text-danger">{{ password_form.old_password.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="mb-3">
+                            <label for="{{ password_form.new_password1.id_for_label }}" class="form-label">{% trans "New Password" %}</label>
+                            <div class="input-group">
+                                <input type="password" name="new_password1" class="form-control" id="{{ password_form.new_password1.id_for_label }}" placeholder="{% trans "Enter your new password" %}">
+                                <button class="btn btn-outline-secondary" type="button" id="toggleNewPassword1">
+                                    <i class="fas fa-eye" id="newPassword1EyeIcon"></i>
+                                </button>
+                            </div>
+                            {% if password_form.new_password1.errors %}
+                                <div class="text-danger">{{ password_form.new_password1.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ password_form.new_password2.id_for_label }}" class="form-label">{% trans "Confirm New Password" %}</label>
+                            <div class="input-group">
+                                <input type="password" name="new_password2" class="form-control" id="{{ password_form.new_password2.id_for_label }}" placeholder="{% trans "Confirm your new password" %}">
+                                <button class="btn btn-outline-secondary" type="button" id="toggleNewPassword2">
+                                    <i class="fas fa-eye" id="newPassword2EyeIcon"></i>
+                                </button>
+                            </div>
+                            {% if password_form.new_password2.errors %}
+                                <div class="text-danger">{{ password_form.new_password2.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <button type="submit" name="change_password" class="btn btn-warning">{% trans "Change Password" %}</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="mb-0">{% trans "Two-Factor Authentication (2FA)" %}</h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="mb-1">{% trans "Enhanced Security" %}</h6>
+                            <p class="text-muted mb-0">
+                                {% if user.is_two_factor_enabled %}
+                                    {% trans "Two-factor authentication is" %} <strong>{% trans "enabled" %}</strong>. {% trans "A code will be sent to your email when logging in." %}
+                                {% else %}
+                                    {% trans "Two-factor authentication is" %} <strong>{% trans "disabled" %}</strong>. {% trans "Enable it for added security." %}
+                                {% endif %}
+                            </p>
+                        </div>
+                        <div class="form-check form-switch">
+                            <form method="post" id="toggle2FAForm">
+                                {% csrf_token %}
+                                <input type="hidden" name="toggle_2fa_submit" value="1">
+                                <input class="form-check-input" type="checkbox" role="switch"
+                                       id="toggle2FA" name="toggle_2fa"
+                                       {% if user.is_two_factor_enabled %}checked{% endif %}
+                                       onchange="document.getElementById('toggle2FAForm').submit();">
+                                <label class="form-check-label" for="toggle2FA">
+                                    {% if user.is_two_factor_enabled %}
+                                        {% trans "Enabled" %}
+                                    {% else %}
+                                        {% trans "Disabled" %}
+                                    {% endif %}
+                                </label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    {% endif %}
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="mb-0 text-danger">{% trans "Delete Account" %}</h5>
+                </div>
+                <div class="card-body">
+                    <p class="text-danger">{% trans "Warning: This action is irreversible!" %}</p>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
+                        {% trans "Delete My Account" %}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const toggleOldPassword = document.getElementById('toggleOldPassword');
+        const oldPassword = document.querySelector('input[name="old_password"]');
+        const oldPasswordEyeIcon = document.getElementById('oldPasswordEyeIcon');
+
+        if (toggleOldPassword && oldPassword && oldPasswordEyeIcon) {
+            toggleOldPassword.addEventListener('click', function() {
+                const type = oldPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+                oldPassword.setAttribute('type', type);
+                oldPasswordEyeIcon.classList.toggle('fa-eye-slash');
+            });
+        }
+
+        const toggleNewPassword1 = document.getElementById('toggleNewPassword1');
+        const newPassword1 = document.querySelector('input[name="new_password1"]');
+        const newPassword1EyeIcon = document.getElementById('newPassword1EyeIcon');
+
+        if (toggleNewPassword1 && newPassword1 && newPassword1EyeIcon) {
+            toggleNewPassword1.addEventListener('click', function() {
+                const type = newPassword1.getAttribute('type') === 'password' ? 'text' : 'password';
+                newPassword1.setAttribute('type', type);
+                newPassword1EyeIcon.classList.toggle('fa-eye-slash');
+            });
+        }
+
+        const toggleNewPassword2 = document.getElementById('toggleNewPassword2');
+        const newPassword2 = document.querySelector('input[name="new_password2"]');
+        const newPassword2EyeIcon = document.getElementById('newPassword2EyeIcon');
+
+        if (toggleNewPassword2 && newPassword2 && newPassword2EyeIcon) {
+            toggleNewPassword2.addEventListener('click', function() {
+                const type = newPassword2.getAttribute('type') === 'password' ? 'text' : 'password';
+                newPassword2.setAttribute('type', type);
+                newPassword2EyeIcon.classList.toggle('fa-eye-slash');
+            });
+        }
+    });
+</script>
+
+{% endblock %}

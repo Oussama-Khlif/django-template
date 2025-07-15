@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load socialaccount %}
+
+{% block title %}{% trans "Create Account" %} - {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+
+<style>
+    input[type="file"] {
+        display: none;
+    }
+
+    .google-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+        border: 1px solid #dadce0;
+        border-radius: 4px;
+        color: #3c4043;
+        cursor: pointer;
+        font-family: 'Google Sans', Roboto, arial, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        height: 40px;
+        letter-spacing: 0.25px;
+        padding: 0 12px 0 16px;
+        text-decoration: none;
+        transition: background-color 0.218s, border-color 0.218s, box-shadow 0.218s;
+    }
+    .google-btn:hover {
+        background-color: #f8f9fa;
+        border-color: #dadce0;
+        box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    }
+
+    .google-btn:before {
+        content: "";
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234285F4' d='M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z'/%3E%3Cpath fill='%2334A853' d='M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z'/%3E%3Cpath fill='%23FBBC05' d='M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z'/%3E%3Cpath fill='%23EA4335' d='M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z'/%3E%3C/svg%3E");
+        background-size: 18px 18px;
+        height: 18px;
+        margin-right: 8px;
+        width: 18px;
+    }
+</style>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-center mb-0">{% trans "Create Your Account" %}</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label for="first_name" class="form-label">{% trans "First Name" %}</label>
+                            {{ form.first_name }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="last_name" class="form-label">{% trans "Last Name" %}</label>
+                            {{ form.last_name }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">{% trans "Email" %}</label>
+                            {{ form.email }}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">{% trans "Password" %}</label>
+                            <div class="input-group">
+                                {{ form.password }}
+                                <button class="btn btn-outline-secondary" type="button" id="togglePassword" aria-label="{% trans "Toggle password visibility" %}">
+                                    <i class="fas fa-eye" id="passwordEyeIcon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="confirm_password" class="form-label">{% trans "Confirm Password" %}</label>
+                            <div class="input-group">
+                                {{ form.confirm_password }}
+                                <button class="btn btn-outline-secondary" type="button" id="toggleConfirmPassword" aria-label="{% trans "Toggle confirm password visibility" %}">
+                                    <i class="fas fa-eye" id="confirmPasswordEyeIcon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="profile_picture" class="form-label">{% trans "Profile Picture" %}</label>
+                            <label class="custom-file-upload w-100">
+                                {{ form.profile_picture }}
+                                <i class="fas fa-cloud-upload-alt me-2"></i>{% trans "Choose a photo" %}
+                            </label>
+                            <small class="form-text text-muted">{% trans "Accepted formats: JPG, PNG (max 5MB)" %}</small>
+                        </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">{% trans "Sign Up" %}</button>
+                            </div>
+
+                            <div class="d-grid mt-2">
+                            <a href="{% provider_login_url 'google' %}">
+                                <button type="button" class="google-btn w-100">{% trans "Continue with Google" %}</button>
+                            </a>
+                            </div>
+                        <div class="text-center mt-3">
+                            <p>{% trans "Already have an account?" %} <a href="{% url 'login' %}">{% trans "Log in" %}</a></p>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelector('input[type="file"]').addEventListener('change', function(e) {
+        const fileName = e.target.files[0]?.name;
+        if (fileName) {
+            this.previousElementSibling.textContent = fileName;
+        }
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const togglePassword = document.getElementById('togglePassword');
+        const password = document.querySelector('input[name="password"]');
+        const passwordEyeIcon = document.getElementById('passwordEyeIcon');
+
+        if (togglePassword && password && passwordEyeIcon) {
+            togglePassword.addEventListener('click', function() {
+
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+
+                if (type === 'password') {
+                    passwordEyeIcon.classList.remove('fa-eye-slash');
+                    passwordEyeIcon.classList.add('fa-eye');
+                } else {
+                    passwordEyeIcon.classList.remove('fa-eye');
+                    passwordEyeIcon.classList.add('fa-eye-slash');
+                }
+            });
+        }
+
+        const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+        const confirmPassword = document.querySelector('input[name="confirm_password"]');
+        const confirmPasswordEyeIcon = document.getElementById('confirmPasswordEyeIcon');
+
+        if (toggleConfirmPassword && confirmPassword && confirmPasswordEyeIcon) {
+            toggleConfirmPassword.addEventListener('click', function() {
+
+                const type = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+                confirmPassword.setAttribute('type', type);
+
+                if (type === 'password') {
+                    confirmPasswordEyeIcon.classList.remove('fa-eye-slash');
+                    confirmPasswordEyeIcon.classList.add('fa-eye');
+                } else {
+                    confirmPasswordEyeIcon.classList.remove('fa-eye');
+                    confirmPasswordEyeIcon.classList.add('fa-eye-slash');
+                }
+            });
+        }
+    });
+</script>
+{% endblock %}

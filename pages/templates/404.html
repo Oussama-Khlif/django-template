@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Page Not Found - {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+<div class="not-found-container" style="text-align:center; padding: 60px 20px;">
+    <h1 style="font-size: 4rem;">404</h1>
+    <p style="font-size: 1.5rem;">Oops! The page you're looking for doesn't exist.</p>
+    <a href="{% url 'index' %}" class="btn btn-secondary mt-4">Back to homepage</a>
+</div>
+{% endblock content %}

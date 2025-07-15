@@ -1,0 +1,232 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "User Management" %} - {{ SITE_NAME }}{% endblock %}
+
+{% block content %}
+
+<div class="container py-4">
+    <h2 class="mb-4">{% trans "User Management" %}</h2>
+
+    {% include 'message.html' %}
+
+    <div class="card">
+        <div class="card-body">
+
+            <div class="d-none d-lg-block">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>{% trans "Username" %}</th>
+                                <th>{% trans "First Name" %}</th>
+                                <th>{% trans "Last Name" %}</th>
+                                <th>{% trans "Email" %}</th>
+                                <th>{% trans "Registration Date" %}</th>
+                                <th>{% trans "Status" %}</th>
+                                <th>{% trans "Actions" %}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for user in users %}
+                            <tr>
+                                <td>
+                                    {% if user.profile_picture %}
+                                        <img src="{{ user.profile_picture.url }}" alt="{% trans "Profile" %}" class="rounded-circle me-2" style="width: 30px; height: 30px; object-fit: cover;">
+                                    {% else %}
+                                        <img src="{% static 'images/user.png' %}" alt="{% trans "Default Profile" %}" class="rounded-circle me-2" style="width: 30px; height: 30px; object-fit: cover;">
+                                    {% endif %}
+                                    {{ user.username }}
+                                    {% if user.is_superuser %}
+                                        <span class="badge bg-danger">{% trans "Admin" %}</span>
+                                    {% endif %}
+                                </td>
+                                <td>{{ user.first_name }}</td>
+                                <td>{{ user.last_name }}</td>
+                                <td>{{ user.email }}</td>
+                                <td>{{ user.date_joined|date:"d/m/Y H:i" }}</td>
+                                <td>
+                                    {% if user.is_banned %}
+                                        <span class="badge bg-warning">{% trans "Banned" %}</span>
+                                    {% else %}
+                                        <span class="badge bg-success">{% trans "Active" %}</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <form method="post" class="d-inline" id="userActionForm{{ user.id }}">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="user_id" value="{{ user.id }}">
+
+                                        <button 
+                                            type="submit" 
+                                            name="action" 
+                                            value="toggle_ban" 
+                                            class="btn btn-warning btn-sm me-1"
+                                            {% if user.is_superuser %}disabled{% endif %}
+                                        >
+                                            {% if user.is_banned %}{% trans "Unban" %}{% else %}{% trans "Ban" %}{% endif %}
+                                        </button>
+
+                                        <button 
+                                            type="button" 
+                                            class="btn btn-danger btn-sm"
+                                            onclick="{% if not user.is_superuser %}confirmUserDelete('{{ user.id }}'){% endif %}"
+                                            {% if user.is_superuser %}disabled{% endif %}
+                                        >
+                                            {% trans "Delete" %}
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="d-lg-none">
+                {% for user in users %}
+                    <div class="card mb-3">
+                        <div class="card-body">
+
+                            <div class="d-flex align-items-center mb-3">
+                                {% if user.profile_picture %}
+                                    <img src="{{ user.profile_picture.url }}" alt="{% trans "Profile" %}" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
+                                {% else %}
+                                    <img src="{% static 'images/user.png' %}" alt="{% trans "Default Profile" %}" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
+                                {% endif %}
+                                <div class="flex-grow-1 min-width-0">
+                                    <h6 class="mb-1">
+                                        {{ user.username }}
+                                        {% if user.is_superuser %}
+                                            <span class="badge bg-danger ms-1">{% trans "Admin" %}</span>
+                                        {% endif %}
+                                    </h6>
+                                    <small class="text-muted text-truncate d-block">{{ user.email }}</small>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <small class="text-muted d-block">{% trans "Full Name" %}</small>
+                                    <span class="fw-medium">{{ user.first_name }} {{ user.last_name }}</span>
+                                </div>
+                                <div class="col-6">
+                                    <small class="text-muted d-block">{% trans "Registration Date" %}</small>
+                                    <span class="fw-medium">{{ user.date_joined|date:"d/m/Y" }}</span>
+                                    <br>
+                                    <small class="text-muted">{{ user.date_joined|date:"H:i" }}</small>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <small class="text-muted d-block">{% trans "Status" %}</small>
+                                    {% if user.is_banned %}
+                                        <span class="badge bg-warning">{% trans "Banned" %}</span>
+                                    {% else %}
+                                        <span class="badge bg-success">{% trans "Active" %}</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <form method="post" class="d-contents" id="userActionFormMobile{{ user.id }}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="user_id" value="{{ user.id }}">
+
+                                    <button 
+                                        type="submit" 
+                                        name="action" 
+                                        value="toggle_ban" 
+                                        class="btn btn-warning btn-sm flex-fill me-md-2"
+                                        {% if user.is_superuser %}disabled{% endif %}
+                                    >
+                                        {% if user.is_banned %}{% trans "Unban" %}{% else %}{% trans "Ban" %}{% endif %}
+                                    </button>
+
+                                    <button 
+                                        type="button" 
+                                        class="btn btn-danger btn-sm flex-fill"
+                                        onclick="{% if not user.is_superuser %}confirmUserDeleteMobile('{{ user.id }}'){% endif %}"
+                                        {% if user.is_superuser %}disabled{% endif %}
+                                    >
+                                        {% trans "Delete" %}
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+
+@media (max-width: 991.98px) {
+    .d-contents {
+        display: contents !important;
+    }
+
+    .card-body .row {
+        margin-bottom: 0.5rem;
+    }
+
+    .flex-fill {
+        flex: 1 1 0%;
+    }
+
+    .min-width-0 {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .d-grid .btn {
+        margin-bottom: 0.5rem;
+    }
+
+    .d-grid .btn:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+</style>
+
+<script>
+function confirmUserDelete(userId) {
+    showConfirmationModal("Êtes-vous sûr de vouloir supprimer cet utilisateur ?", function () {
+        const form = document.getElementById('userActionForm' + userId);
+
+        const deleteInput = document.createElement('input');
+        deleteInput.type = 'hidden';
+        deleteInput.name = 'action';
+        deleteInput.value = 'delete';
+        form.appendChild(deleteInput);
+
+        form.submit();
+    });
+}
+
+function confirmUserDeleteMobile(userId) {
+    showConfirmationModal("Êtes-vous sûr de vouloir supprimer cet utilisateur ?", function () {
+        const form = document.getElementById('userActionFormMobile' + userId);
+
+        const deleteInput = document.createElement('input');
+        deleteInput.type = 'hidden';
+        deleteInput.name = 'action';
+        deleteInput.value = 'delete';
+        form.appendChild(deleteInput);
+
+        form.submit();
+    });
+}
+</script>
+
+{% endblock %}

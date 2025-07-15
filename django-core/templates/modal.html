@@ -1,0 +1,41 @@
+{% load static i18n %}
+<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-danger" id="confirmationModalLabel">{% trans "Confirm Action" %}</h5>
+                <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="{% trans "Close" %}"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger" id="confirmationModalMessage">
+                    {% trans "Are you sure you want to continue?" %}
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="confirmationModalConfirmBtn">{% trans "Yes" %}</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% trans "No" %}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function showConfirmationModal(message, onConfirm) {
+    const modalMessage = document.getElementById('confirmationModalMessage');
+    const confirmBtn = document.getElementById('confirmationModalConfirmBtn');
+
+    modalMessage.textContent = message;
+
+    const newConfirmBtn = confirmBtn.cloneNode(true);
+    confirmBtn.parentNode.replaceChild(newConfirmBtn, confirmBtn);
+
+    newConfirmBtn.addEventListener('click', function () {
+        onConfirm();
+        const modal = bootstrap.Modal.getInstance(document.getElementById('confirmationModal'));
+        modal.hide();
+    });
+
+    const modal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+    modal.show();
+}
+</script>

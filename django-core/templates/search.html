@@ -1,0 +1,270 @@
+{% load static i18n %}
+
+<style>
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-container {
+    background: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-30px) scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.search-overlay.active .search-container {
+    transform: translateY(0) scale(1);
+}
+
+.search-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+}
+
+.search-input-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 16px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 14px 16px 14px 44px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.search-input:focus {
+    border-color: #3b82f6;
+}
+
+.search-close {
+    background: #f3f4f6;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #6b7280;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.search-close:hover {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.search-results {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 0 20px;
+}
+
+.search-result-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #f9fafb;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.search-result-item:hover {
+    opacity: 0.7;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-title {
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.search-result-description {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.search-loading {
+    text-align: center;
+    padding: 40px 20px;
+    color: #9ca3af;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+</style>
+
+<div class="search-overlay" id="searchOverlay">
+    <div class="search-container">
+        <div class="search-header">
+            <div class="search-input-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    id="searchInput"
+                    placeholder="{% trans 'What are you looking for?' %}"
+                    autocomplete="off"
+                >
+            </div>
+            <button class="search-close" onclick="closeSearch()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="search-results" id="searchResults"></div>
+
+    </div>
+</div>
+
+<script>
+const searchOverlay = document.getElementById('searchOverlay');
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+
+const translations = {
+    searching: "{% trans 'Searching...' %}",
+    searchFailed: "{% trans 'Search failed' %}",
+    noResults: "{% trans 'No results for' %}"
+};
+
+function openSearch() {
+    searchOverlay.classList.add('active');
+    setTimeout(() => searchInput.focus(), 100);
+    document.body.style.overflow = 'hidden';
+}
+
+function closeSearch() {
+    searchOverlay.classList.remove('active');
+    searchInput.value = '';
+    searchResults.innerHTML = '';
+    document.body.style.overflow = '';
+}
+
+function performSearch(query) {
+    if (!query.trim()) {
+        searchResults.innerHTML = '';
+        return;
+    }
+
+    searchResults.innerHTML = `
+        <div class="search-loading">
+            ${translations.searching}
+        </div>
+    `;
+
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]')?.value;
+
+    const pathParts = window.location.pathname.split('/');
+    const currentLang = pathParts[1] || 'en'; 
+    const searchUrl = `/${currentLang}/api/search/`;
+
+    fetch(searchUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken
+        },
+        body: JSON.stringify({ query })
+    })
+    .then(response => response.json())
+    .then(data => displayResults(data.results, query))
+    .catch(() => {
+        searchResults.innerHTML = `<div class="search-loading">${translations.searchFailed}</div>`;
+    });
+}
+
+function displayResults(results, query) {
+    if (results.length === 0) {
+        searchResults.innerHTML = `<div class="search-loading">${translations.noResults} "${query}"</div>`;
+        return;
+    }
+
+    searchResults.innerHTML = results.map(result => `
+        <div class="search-result-item" onclick="selectResult('${result.url}')">
+            <div class="search-result-title">${highlightMatch(result.title, query)}</div>
+            <div class="search-result-description">${highlightMatch(result.description, query)}</div>
+        </div>
+    `).join('');
+}
+
+function highlightMatch(text, query) {
+    const regex = new RegExp(`(${query})`, 'gi');
+    return text.replace(regex, '<strong>$1</strong>');
+}
+
+function selectResult(url) {
+    window.location.href = url;
+    closeSearch();
+}
+
+let searchTimeout;
+searchInput.addEventListener('input', (e) => {
+    clearTimeout(searchTimeout);
+    const query = e.target.value;
+
+    if (query.length < 2) {
+        searchResults.innerHTML = '';
+        return;
+    }
+
+    searchTimeout = setTimeout(() => {
+        performSearch(query);
+    }, 300);
+});
+
+document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        openSearch();
+    }
+    if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
+        closeSearch();
+    }
+});
+
+searchOverlay.addEventListener('click', (e) => {
+    if (e.target === searchOverlay) closeSearch();
+});
+</script>

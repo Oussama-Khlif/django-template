@@ -1,0 +1,60 @@
+{% load i18n %}
+
+<div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-danger" id="deleteAccountModalLabel">{% trans "Confirm Account Deletion" %}</h5>
+                <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="{% trans "Close" %}"></button>
+            </div>
+            <form method="post">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <p class="text-danger">{% trans "Are you sure you want to delete your account? This action is irreversible!" %}</p>
+                    
+                    {% if user.has_usable_password %}
+                        <div class="mb-3">
+                            <label for="{{ delete_form.password.id_for_label }}" class="form-label">{% trans "Confirm your password" %}</label>
+                            <div class="input-group">
+                                {{ delete_form.password }}
+                                <button class="btn btn-outline-secondary" type="button" id="toggleDeletePassword" aria-label="{% trans "Toggle password visibility" %}">
+                                    <i class="fas fa-eye" id="deleteEyeIcon"></i>
+                                </button>
+                            </div>
+                        </div>
+                    {% else %}
+                        <p class="text-muted">{% trans "You signed in with an external provider." %}</p>
+                    {% endif %}
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="submit" name="delete_account" class="btn btn-danger">{% trans "Delete Permanently" %}</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% trans "Cancel" %}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% if user.has_usable_password %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleDeletePassword = document.getElementById('toggleDeletePassword');
+    const deletePasswordInput = document.getElementById('id_password');
+    const deleteEyeIcon = document.getElementById('deleteEyeIcon');
+
+    toggleDeletePassword.addEventListener('click', function() {
+        const type = deletePasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        deletePasswordInput.setAttribute('type', type);
+
+        if (type === 'password') {
+            deleteEyeIcon.classList.remove('fa-eye-slash');
+            deleteEyeIcon.classList.add('fa-eye');
+        } else {
+            deleteEyeIcon.classList.remove('fa-eye');
+            deleteEyeIcon.classList.add('fa-eye-slash');
+        }
+    });
+});
+</script>
+{% endif %}

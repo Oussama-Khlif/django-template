@@ -1,0 +1,8 @@
+django
+pillow
+python-dotenv
+gunicorn
+django-allauth
+requests
+PyJWT
+cryptography

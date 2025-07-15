@@ -1,0 +1,1082 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: django-translation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-16 00:18+0100\n"
+"PO-Revision-Date: 2025-07-15 23:19\n"
+"Last-Translator: \n"
+"Language-Team: French\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Crowdin-Project: django-translation\n"
+"X-Crowdin-Project-ID: 809360\n"
+"X-Crowdin-Language: fr\n"
+"X-Crowdin-File: django.po\n"
+"X-Crowdin-File-ID: 6\n"
+
+#: .\django-core\templates\base.html:37
+msgid "We use cookies to improve your experience. By continuing to browse our site, you agree to our cookie policy."
+msgstr "Nous utilisons des cookies pour améliorer votre expérience. En continuant à naviguer sur notre site, vous acceptez notre politique en matière de cookies."
+
+#: .\django-core\templates\base.html:40 .\django-core\templates\footer.html:15
+#: .\django-core\templates\footer.html:64
+msgid "Privacy Policy"
+msgstr "Politique de confidentialité"
+
+#: .\django-core\templates\base.html:41 .\django-core\templates\footer.html:20
+#: .\django-core\templates\footer.html:87
+msgid "Terms of Use"
+msgstr "Conditions d'utilisation"
+
+#: .\django-core\templates\base.html:43
+msgid "Accept"
+msgstr "Accepter"
+
+#: .\django-core\templates\base.html:49
+msgid "No notifications"
+msgstr "Aucune notification"
+
+#: .\django-core\templates\base.html:50
+msgid "Mark all as read"
+msgstr "Marquer tout comme lu"
+
+#: .\django-core\templates\footer.html:8
+msgid "We are a company committed to delivering high-quality services and innovative solutions. Our experienced team works hard to achieve excellent results and build lasting client relationships. We value excellence, reliability, and customer satisfaction. "
+msgstr "Nous sommes une entreprise engagée à fournir des services de haute qualité et des solutions innovantes. Notre équipe expérimentée travaille dur pour obtenir d'excellents résultats et établir des relations durables avec la clientèle. "
+
+#: .\django-core\templates\footer.html:11
+msgid "Quick Links"
+msgstr "Liens rapides"
+
+#: .\django-core\templates\footer.html:26
+msgid "Route de Sousse-M'saken 4070"
+msgstr "Route de Sousse-M'saken 4070"
+
+#: .\django-core\templates\footer.html:44
+msgid "Location"
+msgstr "Localisation"
+
+#: .\django-core\templates\footer.html:55
+msgid "All rights reserved."
+msgstr "Tous droits réservés."
+
+#: .\django-core\templates\footer.html:65
+#: .\django-core\templates\footer.html:77
+#: .\django-core\templates\footer.html:88
+#: .\django-core\templates\footer.html:100 .\django-core\templates\modal.html:7
+#: .\users\templates\delete_modal.html:8
+msgid "Close"
+msgstr "Fermer"
+
+#: .\django-core\templates\footer.html:68
+msgid "Protecting your personal information is a priority. We are committed to respecting your privacy and ensuring the security of your data when you use our website or services."
+msgstr "La protection de vos renseignements personnels est une priorité. Nous nous engageons à respecter votre vie privée et à assurer la sécurité de vos données lorsque vous utilisez notre site Web ou nos services."
+
+#: .\django-core\templates\footer.html:70
+msgid "User Rights"
+msgstr "Droits de l'utilisateur"
+
+#: .\django-core\templates\footer.html:71
+msgid "You have rights regarding your personal data, including the right to access, correct, and delete it. To exercise these rights or for any privacy questions, please contact us at the email provided in the contact section of the site."
+msgstr "Vous avez des droits concernant vos données personnelles, y compris le droit d'accès, de correction et de suppression. Pour exercer ces droits ou pour toute question relative à la protection de la vie privée, veuillez communiquer avec nous à l'adresse électronique fournie dans la section contact du site."
+
+#: .\django-core\templates\footer.html:73
+msgid "Privacy Policy Changes"
+msgstr "Modifications de la politique de confidentialité"
+
+#: .\django-core\templates\footer.html:74
+msgid "This privacy policy may be updated at any time. Changes will be posted on this page with the corresponding update date."
+msgstr "Cette politique de confidentialité peut être mise à jour à tout moment. Les modifications seront affichées sur cette page avec la date de mise à jour correspondante."
+
+#: .\django-core\templates\footer.html:91
+msgid "These terms of use govern your access and use of this site. By accessing this site, you agree to comply with these terms. If you do not agree, please do not use the site."
+msgstr "Les présentes conditions d’utilisation régissent votre accès et votre utilisation de ce site. En accédant à ce site, vous acceptez de vous conformer à ces conditions. Si vous n'êtes pas d'accord, veuillez ne pas utiliser le site."
+
+#: .\django-core\templates\footer.html:93
+msgid "Intellectual Property"
+msgstr "Propriété intellectuelle"
+
+#: .\django-core\templates\footer.html:94
+msgid "The site's content, including texts, images, logos, and other elements, is protected by intellectual property laws. Any unauthorized reproduction, distribution, or use of this content is prohibited."
+msgstr "Le contenu du site, y compris les textes, les images, les logos et autres éléments, est protégé par les lois sur la propriété intellectuelle. Toute reproduction, distribution ou utilisation non autorisée de ce contenu est interdite."
+
+#: .\django-core\templates\footer.html:96
+msgid "Changes to Terms of Use"
+msgstr "Modifications des conditions d'utilisation"
+
+#: .\django-core\templates\footer.html:97
+msgid "These terms may be changed at any time. Updates will be posted on this page and take effect immediately. It is recommended to regularly check this section to stay informed of any changes."
+msgstr "Ces conditions peuvent être modifiées à tout moment. Les mises à jour seront affichées sur cette page et prendront effet immédiatement. Il est recommandé de consulter régulièrement cette section pour être informé de tout changement."
+
+#: .\django-core\templates\messenger_bubble.html:10
+msgid "Hello"
+msgstr "Bonjour"
+
+#: .\django-core\templates\modal.html:6
+msgid "Confirm Action"
+msgstr "Confirmer l'action"
+
+#: .\django-core\templates\modal.html:11
+msgid "Are you sure you want to continue?"
+msgstr "Êtes-vous sûr de vouloir continuer ?"
+
+#: .\django-core\templates\modal.html:15
+msgid "Yes"
+msgstr "Oui"
+
+#: .\django-core\templates\modal.html:16
+msgid "No"
+msgstr "Non"
+
+#: .\django-core\templates\navbar.html:300
+msgid "Toggle navigation"
+msgstr "Basculer la navigation"
+
+#: .\django-core\templates\navbar.html:307 .\pages\templates\index.html:5
+msgid "Home"
+msgstr "Accueil"
+
+#: .\django-core\templates\navbar.html:317
+msgid "About"
+msgstr "À propos de"
+
+#: .\django-core\templates\navbar.html:322
+msgid "Search"
+msgstr "Chercher"
+
+#: .\django-core\templates\navbar.html:332
+#: .\django-core\templates\navbar.html:396 .\users\templates\profile.html:14
+#: .\users\templates\profile.html:16 .\users\templates\profile.html:52
+#: .\users\templates\register.html:95
+msgid "Profile Picture"
+msgstr "Photo de profil"
+
+#: .\django-core\templates\navbar.html:336
+#: .\django-core\templates\navbar.html:398
+msgid "Default Profile Picture"
+msgstr "Photo de profil par défaut"
+
+#: .\django-core\templates\navbar.html:346
+msgid "Notifications"
+msgstr "Notifications"
+
+#: .\django-core\templates\navbar.html:372
+#: .\django-core\templates\navbar.html:412 .\users\templates\admin_users.html:4
+#: .\users\templates\admin_users.html:9
+msgid "User Management"
+msgstr "Gestion des utilisateurs"
+
+#: .\django-core\templates\navbar.html:379
+#: .\django-core\templates\navbar.html:418 .\pages\templates\settings.html:5
+#: .\pages\templates\settings.html:12
+msgid "Settings"
+msgstr "Réglages"
+
+#: .\django-core\templates\navbar.html:387
+#: .\django-core\templates\navbar.html:426
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: .\django-core\templates\navbar.html:406
+msgid "My Profile"
+msgstr "Mon profil"
+
+#: .\django-core\templates\navbar.html:435 .\users\templates\login.html:5
+#: .\users\templates\login.html:48
+msgid "Login"
+msgstr "Se connecter"
+
+#: .\django-core\templates\navbar.html:440
+msgid "Register"
+msgstr "Inscription"
+
+#: .\django-core\templates\navbar.html:449
+msgid "Theme"
+msgstr "Thème"
+
+#: .\django-core\templates\search.html:147
+msgid "What are you looking for?"
+msgstr "Que cherchez-vous ?"
+
+#: .\django-core\templates\search.html:167
+msgid "Searching..."
+msgstr "Recherche en cours..."
+
+#: .\django-core\templates\search.html:168
+msgid "Search failed"
+msgstr "La recherche a échoué"
+
+#: .\django-core\templates\search.html:169
+msgid "No results for"
+msgstr "Aucun résultat pour"
+
+#: .\pages\templates\about.html:5
+msgid "About Us"
+msgstr "À propos de nous"
+
+#: .\pages\templates\about.html:11
+msgid "About Our Company"
+msgstr "À propos de notre entreprise"
+
+#: .\pages\templates\about.html:12
+msgid "Learn more about who we are, what drives us, and our commitment to excellence."
+msgstr "Apprenez-en davantage sur qui nous sommes, ce qui nous motive et notre engagement envers l’excellence."
+
+#: .\pages\templates\about.html:20
+msgid "Our Story"
+msgstr "Notre histoire"
+
+#: .\pages\templates\about.html:23
+msgid "Our Journey So Far"
+msgstr "Notre voyage si lointain"
+
+#: .\pages\templates\about.html:24
+msgid "Founded in [Year of Founding], our company began with a simple yet powerful idea: [briefly state founding idea or problem solved]. From humble beginnings, we've grown into a dynamic team dedicated to [mention core activity/industry]."
+msgstr "Fondée en [Année de la fondation], notre entreprise a commencé avec une idée simple mais puissante : [brièvement l'idée fondatrice de l'État ou problème résolu]. Depuis des débuts modestes, nous sommes devenus une équipe dynamique et dévouée à [mentionner l'activité principale/l'industrie]."
+
+#: .\pages\templates\about.html:25
+msgid "Over the years, we've celebrated many milestones, adapting to challenges and embracing innovation. Our passion for [your industry/field] has always been at the heart of everything we do, pushing us to constantly improve and deliver the best."
+msgstr "Au fil des ans, nous avons célébré de nombreux jalons en nous adaptant aux défis et en embrassant l'innovation. Notre passion pour [votre industrie/votre domaine] a toujours été au cœur de tout ce que nous faisons, nous poussant à constamment améliorer et à offrir le meilleur."
+
+#: .\pages\templates\about.html:35
+msgid "Our Mission"
+msgstr "Notre mission"
+
+#: .\pages\templates\about.html:36
+msgid "To empower [your target audience] by providing [your product/service] that [key benefit]."
+msgstr "Accroître [votre public cible] en fournissant [votre produit/service] ce [bénéfice clé]."
+
+#: .\pages\templates\about.html:37
+msgid "We are committed to delivering exceptional quality, fostering strong relationships, and continuously innovating to meet the evolving needs of our clients."
+msgstr "Nous nous engageons à offrir une qualité exceptionnelle, à favoriser de solides relations et à innover continuellement pour répondre aux besoins changeants de nos clients."
+
+#: .\pages\templates\about.html:40
+msgid "Our Vision"
+msgstr "Notre vision"
+
+#: .\pages\templates\about.html:41
+msgid "To be the leading [your industry] company, recognized for our [mention key differentiator] and positive impact on [area of impact]."
+msgstr "Pour être la société leader [votre industrie], reconnue pour notre [différenciateur clé] de mention et l'impact positif sur [le domaine d'impact]."
+
+#: .\pages\templates\about.html:42
+msgid "We envision a future where our solutions contribute significantly to [positive outcome] and set new benchmarks for excellence in our field."
+msgstr "Nous envisageons un avenir où nos solutions contribuent de manière significative à [résultat positif] et établissons de nouveaux repères pour l'excellence dans notre domaine."
+
+#: .\pages\templates\about.html:50
+msgid "Our Core Values"
+msgstr "Nos valeurs de base"
+
+#: .\pages\templates\about.html:56
+msgid "Integrity"
+msgstr "Intégrité"
+
+#: .\pages\templates\about.html:57
+msgid "We operate with honesty, transparency, and strong moral principles in all our dealings."
+msgstr "Nous opérons avec honnêteté, transparence et principes moraux forts dans toutes nos affaires."
+
+#: .\pages\templates\about.html:65
+msgid "Innovation"
+msgstr "L'innovation"
+
+#: .\pages\templates\about.html:66
+msgid "We embrace creativity and continuously seek new and better ways to solve problems."
+msgstr "Nous embrassons la créativité et cherchons continuellement de nouvelles et meilleures façons de résoudre les problèmes."
+
+#: .\pages\templates\about.html:74
+msgid "Customer Focus"
+msgstr "Concentration client"
+
+#: .\pages\templates\about.html:75
+msgid "Our clients are at the heart of everything we do; their success is our priority."
+msgstr "Nos clients sont au cœur de tout ce que nous faisons; leur succès est notre priorité."
+
+#: .\pages\templates\about.html:85
+msgid "Ready to Work With Us?"
+msgstr "Prêt à travailler avec nous?"
+
+#: .\pages\templates\about.html:86
+msgid "We're always excited to collaborate on new projects and build lasting partnerships."
+msgstr "Nous sommes toujours heureux de collaborer à de nouveaux projets et de construire des partenariats durables."
+
+#: .\pages\templates\about.html:87 .\pages\templates\index.html:102
+msgid "Get in Touch"
+msgstr "Entrez en contact"
+
+#: .\pages\templates\index.html:98
+msgid "Your Gateway to Enhanced Productivity"
+msgstr "Votre porte d'accès à la productivité améliorée"
+
+#: .\pages\templates\index.html:99
+msgid "Discover how our innovative solutions streamline your work, secure your data, and empower your growth."
+msgstr "Découvrez comment nos solutions innovantes rationalisent votre travail, sécurisent vos données et renforcent votre croissance."
+
+#: .\pages\templates\index.html:101
+msgid "Explore Features"
+msgstr "Explorer les fonctionnalités"
+
+#: .\pages\templates\index.html:109
+msgid "Discover Our Powerful Features"
+msgstr "Découvrez nos Puissantes Fonctions"
+
+#: .\pages\templates\index.html:117
+msgid "Blazing Fast Performance"
+msgstr "Performances flamboyantes"
+
+#: .\pages\templates\index.html:118
+msgid "Experience lightning-fast loading times and incredibly smooth operation for all your tasks."
+msgstr "Expérimentez des temps de chargement rapides et un fonctionnement incroyablement fluide pour toutes vos tâches."
+
+#: .\pages\templates\index.html:119 .\pages\templates\index.html:132
+#: .\pages\templates\index.html:145
+msgid "Learn More"
+msgstr "En savoir plus"
+
+#: .\pages\templates\index.html:130
+msgid "Ironclad Security"
+msgstr "Sécurité cuirassé"
+
+#: .\pages\templates\index.html:131
+msgid "Rest easy with enterprise-grade security measures dedicated to protecting all your valuable data."
+msgstr "Reposez-vous facilement grâce à des mesures de sécurité de qualité entreprise dédiées à la protection de toutes vos données précieuses."
+
+#: .\pages\templates\index.html:143
+msgid "Fully Customizable"
+msgstr "Entièrement personnalisable"
+
+#: .\pages\templates\index.html:144
+msgid "Effortlessly tailor the platform to precisely fit your unique workflows and specific organizational needs."
+msgstr "Adapter la plateforme de manière efficace à vos flux de travail uniques et à vos besoins organisationnels spécifiques."
+
+#: .\pages\templates\index.html:154
+msgid "What Our Users Say"
+msgstr "Ce que disent nos utilisateurs"
+
+#: .\pages\templates\index.html:160 .\pages\templates\index.html:162
+msgid "Sarah Johnson"
+msgstr "Sarah Johnson"
+
+#: .\pages\templates\index.html:163
+msgid "Marketing Director"
+msgstr "Directeur Marketing"
+
+#: .\pages\templates\index.html:166
+msgid "This platform transformed our workflow. The intuitive interface and powerful features made a significant difference. Highly recommended!"
+msgstr "Cette plateforme a transformé notre flux de travail. L'interface intuitive et les fonctionnalités puissantes ont fait une différence significative. Fortement recommandé !"
+
+#: .\pages\templates\index.html:182 .\pages\templates\index.html:184
+msgid "Michael Chen"
+msgstr "Michael Chen"
+
+#: .\pages\templates\index.html:185
+msgid "CTO"
+msgstr "CTO"
+
+#: .\pages\templates\index.html:188
+msgid "As a CTO, security is paramount. The enterprise-grade security features of this platform give us absolute peace of mind for our sensitive data."
+msgstr "En tant que CTO, la sécurité est primordiale. Les fonctionnalités de sécurité d'entreprise de cette plate-forme nous donnent une tranquillité d'esprit absolue pour nos données sensibles."
+
+#: .\pages\templates\index.html:204 .\pages\templates\index.html:206
+msgid "Emma Rodriguez"
+msgstr "Emma Rodriguez"
+
+#: .\pages\templates\index.html:207
+msgid "Small Business Owner"
+msgstr "Propriétaire de la petite entreprise"
+
+#: .\pages\templates\index.html:210
+msgid "This platform offers incredible value. It's both affordable and powerful – truly perfect for scaling my growing business without breaking the bank."
+msgstr "Cette plateforme offre une valeur incroyable. Elle est à la fois abordable et puissante – vraiment parfaite pour agrandir mon entreprise en pleine croissance sans pour autant casser la banque."
+
+#: .\pages\templates\index.html:225
+msgid "Simple & Transparent Pricing"
+msgstr "Tarification simple et transparente"
+
+#: .\pages\templates\index.html:230
+msgid "Basic"
+msgstr "Basique"
+
+#: .\pages\templates\index.html:233 .\pages\templates\index.html:251
+#: .\pages\templates\index.html:269
+msgid "/month"
+msgstr "/mois"
+
+#: .\pages\templates\index.html:235
+msgid "10 users included"
+msgstr "10 utilisateurs inclus"
+
+#: .\pages\templates\index.html:236
+msgid "2 GB of storage"
+msgstr "2 Go de stockage"
+
+#: .\pages\templates\index.html:237
+msgid "Email support"
+msgstr "Envoyer un e-mail à l'assistance"
+
+#: .\pages\templates\index.html:238 .\pages\templates\index.html:256
+msgid "Help center access"
+msgstr "Accès au centre d'aide"
+
+#: .\pages\templates\index.html:240 .\pages\templates\index.html:258
+msgid "Get Started"
+msgstr "Commencer"
+
+#: .\pages\templates\index.html:248
+msgid "Pro"
+msgstr "Pro"
+
+#: .\pages\templates\index.html:253
+msgid "20 users included"
+msgstr "20 utilisateurs inclus"
+
+#: .\pages\templates\index.html:254
+msgid "10 GB of storage"
+msgstr "10 Go de stockage"
+
+#: .\pages\templates\index.html:255
+msgid "Priority email support"
+msgstr "Support par e-mail prioritaire"
+
+#: .\pages\templates\index.html:266
+msgid "Enterprise"
+msgstr "Entreprise"
+
+#: .\pages\templates\index.html:271
+msgid "Unlimited users"
+msgstr "Utilisateurs illimités"
+
+#: .\pages\templates\index.html:272
+msgid "50 GB of storage"
+msgstr "50 Go de stockage"
+
+#: .\pages\templates\index.html:273
+msgid "Phone & email support"
+msgstr "Support par téléphone et e-mail"
+
+#: .\pages\templates\index.html:274
+msgid "Dedicated account manager"
+msgstr "Gestionnaire de compte dédié"
+
+#: .\pages\templates\index.html:276
+msgid "Contact Sales"
+msgstr "Contacter les ventes"
+
+#: .\pages\templates\index.html:285
+msgid "Ready to Get Started?"
+msgstr "Prêt à commencer ?"
+
+#: .\pages\templates\index.html:286
+msgid "Join thousands of satisfied users and experience the difference our platform makes."
+msgstr "Rejoignez des milliers d'utilisateurs satisfaits et profitez de la différence de notre plateforme."
+
+#: .\pages\templates\index.html:287
+msgid "Sign Up Today"
+msgstr "S'inscrire aujourd'hui"
+
+#: .\pages\templates\settings.html:13
+msgid "Customize your experience"
+msgstr "Personnalisez votre expérience"
+
+#: .\pages\templates\settings.html:26
+msgid "Sounds"
+msgstr "Sons"
+
+#: .\pages\templates\settings.html:30 .\users\templates\profile.html:177
+msgid "Enabled"
+msgstr "Activé"
+
+#: .\pages\templates\settings.html:33 .\users\templates\profile.html:179
+msgid "Disabled"
+msgstr "Désactivé"
+
+#: .\pages\templates\settings.html:42
+msgid "Save"
+msgstr "Enregistrer"
+
+#: .\pages\views.py:28
+msgid "Settings updated successfully."
+msgstr "Paramètres mis à jour avec succès."
+
+#: .\pages\views.py:31
+msgid "An error occurred while saving your settings."
+msgstr "Une erreur s'est produite lors de l'enregistrement de vos paramètres."
+
+#: .\users\forms.py:17
+msgid "First name"
+msgstr "Prénom"
+
+#: .\users\forms.py:26
+msgid "Last name"
+msgstr "Nom de famille"
+
+#: .\users\forms.py:34
+msgid "email@example.com"
+msgstr "email@exemple.com"
+
+#: .\users\forms.py:42 .\users\forms.py:110 .\users\templates\login.html:64
+#: .\users\templates\register.html:75
+msgid "Password"
+msgstr "Mot de passe"
+
+#: .\users\forms.py:50
+msgid "Confirm password"
+msgstr "Confirmer le mot de passe"
+
+#: .\users\forms.py:83
+msgid "This email is already in use."
+msgstr "Cet e-mail est déjà utilisé."
+
+#: .\users\forms.py:93
+msgid "Passwords do not match."
+msgstr "Les mots de passe ne correspondent pas."
+
+#: .\users\forms.py:103 .\users\templates\login.html:54
+msgid "Username or email address"
+msgstr "Nom d'utilisateur ou adresse e-mail"
+
+#: .\users\forms.py:131
+msgid "Enter your first name"
+msgstr "Entrez votre prénom"
+
+#: .\users\forms.py:136
+msgid "Enter your last name"
+msgstr "Entrez votre nom de famille"
+
+#: .\users\forms.py:141 .\users\templates\forgot_password.html:27
+msgid "Enter your email"
+msgstr "Entrez votre adresse e-mail"
+
+#: .\users\forms.py:163
+msgid "Enter your password"
+msgstr "Entrez votre mot de passe"
+
+#: .\users\forms.py:168
+msgid "Enter your email address"
+msgstr "Entrez votre adresse e-mail"
+
+#: .\users\forms.py:175
+msgid "No user found with this email address."
+msgstr "Aucun utilisateur n'a été trouvé avec cette adresse e-mail."
+
+#: .\users\forms.py:179 .\users\forms.py:202
+msgid "Enter the 6-digit code"
+msgstr "Entrez le code à 6 chiffres"
+
+#: .\users\forms.py:180 .\users\templates\profile.html:123
+msgid "Enter your new password"
+msgstr "Entrez votre nouveau mot de passe"
+
+#: .\users\forms.py:181 .\users\templates\profile.html:136
+msgid "Confirm your new password"
+msgstr "Confirmez votre nouveau mot de passe"
+
+#: .\users\forms.py:189
+msgid "The passwords do not match."
+msgstr "Les mots de passe ne correspondent pas."
+
+#: .\users\forms.py:198 .\users\templates\reset_password.html:38
+msgid "Verification Code"
+msgstr "Code de vérification"
+
+#: .\users\forms.py:205
+msgid "The code must contain exactly 6 digits"
+msgstr "Le code doit contenir exactement 6 chiffres"
+
+#: .\users\forms.py:208
+msgid "Please enter the verification code we sent to your email."
+msgstr "Veuillez entrer le code de vérification que nous avons envoyé à votre adresse e-mail."
+
+#: .\users\templates\admin_users.html:21 .\users\templates\profile.html:44
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#: .\users\templates\admin_users.html:22 .\users\templates\profile.html:72
+#: .\users\templates\register.html:60
+msgid "First Name"
+msgstr "Prénom"
+
+#: .\users\templates\admin_users.html:23 .\users\templates\profile.html:80
+#: .\users\templates\register.html:65
+msgid "Last Name"
+msgstr "Nom de famille"
+
+#: .\users\templates\admin_users.html:24
+#: .\users\templates\forgot_password.html:25 .\users\templates\profile.html:88
+#: .\users\templates\register.html:70
+msgid "Email"
+msgstr "Courriel"
+
+#: .\users\templates\admin_users.html:25 .\users\templates\admin_users.html:115
+msgid "Registration Date"
+msgstr "Date d'inscription"
+
+#: .\users\templates\admin_users.html:26 .\users\templates\admin_users.html:124
+msgid "Status"
+msgstr "Statut"
+
+#: .\users\templates\admin_users.html:27
+msgid "Actions"
+msgstr "Actions"
+
+#: .\users\templates\admin_users.html:35 .\users\templates\admin_users.html:94
+msgid "Profile"
+msgstr "Profil"
+
+#: .\users\templates\admin_users.html:37 .\users\templates\admin_users.html:96
+msgid "Default Profile"
+msgstr "Profil par défaut"
+
+#: .\users\templates\admin_users.html:41 .\users\templates\admin_users.html:102
+msgid "Admin"
+msgstr "Administrateur"
+
+#: .\users\templates\admin_users.html:50 .\users\templates\admin_users.html:126
+msgid "Banned"
+msgstr "Banni"
+
+#: .\users\templates\admin_users.html:52 .\users\templates\admin_users.html:128
+msgid "Active"
+msgstr "Actif"
+
+#: .\users\templates\admin_users.html:67 .\users\templates\admin_users.html:145
+msgid "Unban"
+msgstr "Débannir"
+
+#: .\users\templates\admin_users.html:67 .\users\templates\admin_users.html:145
+msgid "Ban"
+msgstr "Bannir"
+
+#: .\users\templates\admin_users.html:76 .\users\templates\admin_users.html:154
+msgid "Delete"
+msgstr "Supprimez"
+
+#: .\users\templates\admin_users.html:111
+msgid "Full Name"
+msgstr "Nom complet"
+
+#: .\users\templates\ban.html:7 .\users\templates\ban.html:97
+msgid "Account Suspended"
+msgstr "Compte suspendu"
+
+#: .\users\templates\ban.html:100
+msgid "Your account has been suspended by the administrator."
+msgstr "Votre compte a été suspendu par l'administrateur."
+
+#: .\users\templates\ban.html:101
+msgid "For more information, please contact the administrator."
+msgstr "Pour plus d'informations, veuillez contacter l'administrateur."
+
+#: .\users\templates\ban.html:105
+msgid "Log Out"
+msgstr "Déconnexion"
+
+#: .\users\templates\delete_modal.html:7
+msgid "Confirm Account Deletion"
+msgstr "Confirmer la suppression du compte"
+
+#: .\users\templates\delete_modal.html:13
+msgid "Are you sure you want to delete your account? This action is irreversible!"
+msgstr "Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible !"
+
+#: .\users\templates\delete_modal.html:17
+msgid "Confirm your password"
+msgstr "Confirmez votre mot de passe"
+
+#: .\users\templates\delete_modal.html:20 .\users\templates\login.html:67
+#: .\users\templates\register.html:78
+msgid "Toggle password visibility"
+msgstr "Basculer la visibilité du mot de passe"
+
+#: .\users\templates\delete_modal.html:26
+msgid "You signed in with an external provider."
+msgstr "Vous vous êtes connecté avec un fournisseur externe."
+
+#: .\users\templates\delete_modal.html:31
+msgid "Delete Permanently"
+msgstr "Supprimer définitivement"
+
+#: .\users\templates\delete_modal.html:32
+msgid "Cancel"
+msgstr "Abandonner"
+
+#: .\users\templates\forgot_password.html:14
+msgid "Forgot Password"
+msgstr "Mot de passe oublié"
+
+#: .\users\templates\forgot_password.html:18
+msgid "Enter your email address and we will send you a reset code."
+msgstr "Entrez votre adresse e-mail et nous vous enverrons un code de réinitialisation."
+
+#: .\users\templates\forgot_password.html:29
+msgid "Please enter a valid email address."
+msgstr "Veuillez entrer une adresse e-mail valide."
+
+#: .\users\templates\forgot_password.html:35
+msgid "Request Reset Code"
+msgstr "Demander un code de réinitialisation"
+
+#: .\users\templates\login.html:79
+msgid "Log In"
+msgstr "Se connecter"
+
+#: .\users\templates\login.html:83 .\users\templates\register.html:109
+msgid "Continue with Google"
+msgstr "Continuer avec Google"
+
+#: .\users\templates\login.html:89
+msgid "Don't have an account?"
+msgstr "Vous n'avez pas de compte ?"
+
+#: .\users\templates\login.html:89
+msgid "Sign up here"
+msgstr "S'inscrire ici"
+
+#: .\users\templates\login.html:93
+msgid "Forgot password?"
+msgstr "Mot de passe oublié ?"
+
+#: .\users\templates\profile.html:5
+msgid "My Account"
+msgstr "Mon Compte"
+
+#: .\users\templates\profile.html:26 .\users\views.py:306
+msgid "No email available"
+msgstr "Aucun email disponible"
+
+#: .\users\templates\profile.html:38
+msgid "Edit Profile"
+msgstr "Modifier le profil"
+
+#: .\users\templates\profile.html:59
+msgid "Update Profile"
+msgstr "Mettre à jour le profil"
+
+#: .\users\templates\profile.html:66
+msgid "Personal Information"
+msgstr "Informations personnelles"
+
+#: .\users\templates\profile.html:95
+msgid "Update Information"
+msgstr "Mettre à jour les informations"
+
+#: .\users\templates\profile.html:103 .\users\templates\profile.html:146
+msgid "Change Password"
+msgstr "Changer le mot de passe"
+
+#: .\users\templates\profile.html:109
+msgid "Old Password"
+msgstr "Ancien mot de passe"
+
+#: .\users\templates\profile.html:111
+msgid "Enter your old password"
+msgstr "Entrez votre ancien mot de passe"
+
+#: .\users\templates\profile.html:121 .\users\templates\reset_password.html:57
+msgid "New Password"
+msgstr "Nouveau mot de passe"
+
+#: .\users\templates\profile.html:134
+msgid "Confirm New Password"
+msgstr "Confirmer le nouveau mot de passe"
+
+#: .\users\templates\profile.html:153
+msgid "Two-Factor Authentication (2FA)"
+msgstr "Authentification à deux facteurs (2FA)"
+
+#: .\users\templates\profile.html:158
+msgid "Enhanced Security"
+msgstr "Sécurité améliorée"
+
+#: .\users\templates\profile.html:161 .\users\templates\profile.html:163
+msgid "Two-factor authentication is"
+msgstr "L'authentification à deux facteurs est"
+
+#: .\users\templates\profile.html:161
+msgid "enabled"
+msgstr "Activé"
+
+#: .\users\templates\profile.html:161
+msgid "A code will be sent to your email when logging in."
+msgstr "Un code sera envoyé à votre adresse e-mail lorsque vous vous connecterez."
+
+#: .\users\templates\profile.html:163
+msgid "disabled"
+msgstr "désactivée"
+
+#: .\users\templates\profile.html:163
+msgid "Enable it for added security."
+msgstr "Activez-le pour plus de sécurité."
+
+#: .\users\templates\profile.html:190
+msgid "Delete Account"
+msgstr "Supprimer le compte"
+
+#: .\users\templates\profile.html:193
+msgid "Warning: This action is irreversible!"
+msgstr "Attention : Cette action est irréversible !"
+
+#: .\users\templates\profile.html:195
+msgid "Delete My Account"
+msgstr "Supprimer mon compte"
+
+#: .\users\templates\register.html:6
+msgid "Create Account"
+msgstr "Créer un compte"
+
+#: .\users\templates\register.html:53
+msgid "Create Your Account"
+msgstr "Créez votre compte"
+
+#: .\users\templates\register.html:85 .\users\templates\reset_password.html:80
+msgid "Confirm Password"
+msgstr "Confirmer le mot de passe"
+
+#: .\users\templates\register.html:88 .\users\templates\reset_password.html:85
+msgid "Toggle confirm password visibility"
+msgstr "Basculer la visibilité de la confirmation du mot de passe"
+
+#: .\users\templates\register.html:98
+msgid "Choose a photo"
+msgstr "Choisir une photo"
+
+#: .\users\templates\register.html:100
+msgid "Accepted formats: JPG, PNG (max 5MB)"
+msgstr "Formats acceptés : JPG, PNG (max 5MB)"
+
+#: .\users\templates\register.html:104
+msgid "Sign Up"
+msgstr "S'inscrire"
+
+#: .\users\templates\register.html:113
+msgid "Already have an account?"
+msgstr "Vous avez déjà un compte ?"
+
+#: .\users\templates\register.html:113
+msgid "Log in"
+msgstr "Se connecter"
+
+#: .\users\templates\reset_password.html:4
+#: .\users\templates\reset_password.html:13 .\users\views.py:85
+msgid "Password Reset"
+msgstr "Réinitialisation du mot de passe"
+
+#: .\users\templates\reset_password.html:22
+msgid "Enter the verification code sent by email and your new password."
+msgstr "Entrez le code de vérification envoyé par e-mail et votre nouveau mot de passe."
+
+#: .\users\templates\reset_password.html:51
+msgid "Please enter the 6-digit code we sent you by email."
+msgstr "Veuillez entrer le code à 6 chiffres que nous vous avons envoyé par courriel."
+
+#: .\users\templates\reset_password.html:62
+msgid "Toggle new password visibility"
+msgstr "Afficher/Masquer le nouveau mot de passe"
+
+#: .\users\templates\reset_password.html:74
+msgid "Use at least 8 characters including letters, numbers, and symbols."
+msgstr "Utilisez au moins 8 caractères, y compris des lettres, des chiffres et des symboles."
+
+#: .\users\templates\reset_password.html:100
+msgid "Reset Password"
+msgstr "Réinitialiser le mot de passe"
+
+#: .\users\templates\reset_password.html:103
+msgid "Back"
+msgstr "Précédent"
+
+#: .\users\templates\verify_email.html:4 .\users\templates\verify_email.html:14
+msgid "Email Verification"
+msgstr "Vérification de l'e-mail"
+
+#: .\users\templates\verify_email.html:26
+msgid "Enter the 6-digit code sent to your email"
+msgstr "Entrez le code à 6 chiffres envoyé à votre adresse e-mail"
+
+#: .\users\templates\verify_email.html:33
+msgid "Verify"
+msgstr "Vérifier"
+
+#: .\users\views.py:54
+msgid "You cannot modify your own account!"
+msgstr "Vous ne pouvez pas modifier votre propre compte !"
+
+#: .\users\views.py:59
+#, python-brace-format
+msgid "User {username} has been deleted."
+msgstr "L'utilisateur {username} a été supprimé."
+
+#: .\users\views.py:63
+msgid "banned"
+msgstr "banni"
+
+#: .\users\views.py:63
+msgid "unbanned"
+msgstr "dé-banni"
+
+#: .\users\views.py:64
+#, python-brace-format
+msgid "User {username} has been {status}."
+msgstr "L'utilisateur {username} a été {status}."
+
+#: .\users\views.py:81
+msgid "Your password reset code"
+msgstr "Code de réinitialisation de votre mot de passe"
+
+#: .\users\views.py:86
+msgid "Your password reset code is:"
+msgstr "Votre code de réinitialisation de mot de passe est :"
+
+#: .\users\views.py:87
+msgid "This code will expire in 5 minutes."
+msgstr "Ce code expirera dans 5 minutes."
+
+#: .\users\views.py:95
+msgid "Password reset code has been sent to your email address."
+msgstr "Le code de réinitialisation du mot de passe a été envoyé à votre adresse e-mail."
+
+#: .\users\views.py:98
+msgid "Failed to send email. Please try again later."
+msgstr "Échec de l'envoi de l'e-mail. Veuillez réessayer plus tard."
+
+#: .\users\views.py:102
+msgid "If this email exists in our system, a password reset code has been sent."
+msgstr "Si cet e-mail existe dans notre système, un code de réinitialisation du mot de passe a été envoyé."
+
+#: .\users\views.py:107
+#, python-brace-format
+msgid "Password reset error: {error}"
+msgstr "Erreur de réinitialisation du mot de passe : {error}"
+
+#: .\users\views.py:108
+msgid "An error occurred. Please try again later."
+msgstr "Une erreur est survenue. Veuillez réessayer plus tard."
+
+#: .\users\views.py:143
+#, python-brace-format
+msgid "Account temporarily suspended. Try again in {minutes} minutes."
+msgstr "Compte temporairement suspendu. Réessayez dans {minutes} minutes."
+
+#: .\users\views.py:144
+#, python-brace-format
+msgid "Account suspended for {minutes} minutes"
+msgstr "Compte suspendu pour {minutes} minutes"
+
+#: .\users\views.py:162
+msgid "Too many failed login attempts. Account suspended for 30 minutes."
+msgstr "Trop de tentatives de connexion échouées. Compte suspendu pendant 30 minutes."
+
+#: .\users\views.py:163
+msgid "Account suspended for 30 minutes"
+msgstr "Compte suspendu pendant 30 minutes"
+
+#: .\users\views.py:205
+msgid "Account temporarily suspended. Please try again in {} minutes."
+msgstr "Compte temporairement suspendu. Veuillez réessayer dans {} minutes."
+
+#: .\users\views.py:222
+msgid "Login verification code"
+msgstr "Code de vérification de connexion"
+
+#: .\users\views.py:223
+msgid "Your verification code for login is: {}"
+msgstr "Votre code de vérification pour la connexion est : {}"
+
+#: .\users\views.py:227 .\users\views.py:392
+msgid "A verification code has been sent to your email address."
+msgstr "Un code de vérification a été envoyé à votre adresse e-mail."
+
+#: .\users\views.py:233
+#, python-format
+msgid "Welcome back, %(name)s!"
+msgstr "Bienvenue, %(name)s!"
+
+#: .\users\views.py:242
+msgid "Invalid username or password."
+msgstr "Nom d'utilisateur ou mot de passe invalide."
+
+#: .\users\views.py:261
+msgid "Your profile has been updated successfully!"
+msgstr "Votre profil a été mis à jour avec succès !"
+
+#: .\users\views.py:279
+msgid "Verify your new email address"
+msgstr "Vérifiez votre nouvelle adresse e-mail"
+
+#: .\users\views.py:280 .\users\views.py:387
+msgid "Your verification code is: {}"
+msgstr "Votre code de vérification est : {}"
+
+#: .\users\views.py:283
+msgid "A verification code has been sent to your new email address."
+msgstr "Un code de vérification a été envoyé à votre nouvelle adresse e-mail."
+
+#: .\users\views.py:287
+msgid "Your personal information has been updated successfully!"
+msgstr "Vos informations personnelles ont été mises à jour avec succès !"
+
+#: .\users\views.py:296
+msgid "Your password has been changed successfully!"
+msgstr "Votre mot de passe a été modifié avec succès !"
+
+#: .\users\views.py:317
+msgid "Two-factor authentication has been enabled!"
+msgstr "L'authentification à deux facteurs a été activée !"
+
+#: .\users\views.py:319
+msgid "Two-factor authentication has been disabled!"
+msgstr "L'authentification à deux facteurs a été désactivée !"
+
+#: .\users\views.py:331 .\users\views.py:339
+msgid "Your account has been deleted successfully."
+msgstr "Votre compte a été supprimé avec succès."
+
+#: .\users\views.py:334
+msgid "Incorrect password."
+msgstr "Mot de passe incorrect."
+
+#: .\users\views.py:386
+msgid "Verify your email address"
+msgstr "Vérifiez votre adresse e-mail"
+
+#: .\users\views.py:407 .\users\views.py:441 .\users\views.py:513
+msgid "Session expired or invalid request."
+msgstr "La session a expiré ou demande non valide."
+
+#: .\users\views.py:426
+msgid "Password reset successfully."
+msgstr "Mot de passe réinitialisé avec succès."
+
+#: .\users\views.py:429
+msgid "Invalid or expired code."
+msgstr "Code invalide ou expiré."
+
+#: .\users\views.py:490
+msgid "Welcome, {}! Your account has been created successfully."
+msgstr "Bienvenue, {} ! Votre compte a été créé avec succès."
+
+#: .\users\views.py:502 .\users\views.py:538
+msgid "Invalid or expired verification code."
+msgstr "Code de vérification invalide ou expiré."
+
+#: .\users\views.py:532
+msgid "Welcome back, {}!"
+msgstr "Bienvenue, {} !"
+
+#: .\users\views.py:535
+msgid "User not found."
+msgstr "Utilisateur introuvable."
+
+#: .\users\views.py:550
+msgid "No pending verification."
+msgstr "Aucune vérification en attente."
+
+#: .\users\views.py:561
+msgid "Your email address has been updated successfully!"
+msgstr "Votre adresse e-mail a été mise à jour avec succès !"
+
+#: .\users\views.py:564
+msgid "Incorrect verification code."
+msgstr "Code de vérification incorrect."
+
